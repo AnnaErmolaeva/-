@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="Редактирование книги" Height="350"  Width="550" MinHeight="360" MinWidth="550" MaxHeight="360" MaxWidth="550">
+        Title="Редактирование книги" Height="350"  Width="550" MinHeight="360" MinWidth="550"  MaxHeight="360" MaxWidth="550">
 
     <Window.DataContext>
         <local:MainWindowViewModel></local:MainWindowViewModel>
@@ -24,8 +24,8 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" Margin="5" VerticalAlignment="Center" >Автор</TextBlock>
             <TextBlock Grid.Column="0" Grid.Row="1" Margin="5" VerticalAlignment="Center">Автор</TextBlock>
-            <TextBox Grid.Column="1" Grid.Row="0" Margin="5" Text="{Binding avtor1}" VerticalAlignment="Center"></TextBox>
-            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" Text="{Binding avtor2}" VerticalAlignment="Center"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="0" Margin="5" Text="{Binding avtor}" VerticalAlignment="Center"></TextBox>
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" Text="{Binding avtor}" VerticalAlignment="Center"></TextBox>
             <Button Grid.Column="6" Grid.Row="0" Margin="5" Width="25" Height="25" HorizontalAlignment="Left">-</Button>
             <Button Grid.Column="6" Grid.Row="1" Margin="5" Width="25" Height="25" HorizontalAlignment="Left">-</Button>
         </Grid>
@@ -52,7 +52,7 @@
         </Grid>
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin="5">Год</TextBlock>
-            <TextBox  Margin="10,0,10,0" Text="{Binding nameyear}" Width="80"></TextBox>
+            <TextBox  Margin="10,0,10,0" Text="{Binding year }" Width="80"></TextBox>
             <TextBlock Margin="10,5,10,5">Тираж</TextBlock>
             <TextBox  Margin="10,0,10,0"  Text="{Binding tiraj}" Width="80"></TextBox>
             <TextBlock Margin="10,5,10,5">ISBN</TextBlock>
