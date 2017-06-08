@@ -91,7 +91,7 @@ namespace WpfApplication1
         {
             get
             {
-                return _save ?? (_save = new CommandHandler(()=> ssave(Avtor, Novavtor, Namebook, Nameizdatel, Year, Tiraj, Isbn), _canExecute ));
+                return _save ?? (_save = new CommandHandler(()=> ssave(avtor, novavtor, namebook, nameizdatel, year, tiraj, isbn), _canExecute ));
             }
         }
         private bool _canExecute;
