@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.ComponentModel;
+using System.Data.SqlClient;
+
 
 
 namespace WpfApplication1
@@ -66,8 +68,51 @@ namespace WpfApplication1
         public event PropertyChangedEventHandler PropertyChanged;
         private void Notify(string propName)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
+
+
+
+        public static void ssave(string avtor, string novavtor, string namebook, string nameizdatel, int year, int tiraj, string isbn)
+        {
+            using(SqlConnection cn = new SqlConnection("Server = ANNA-PC; Database= mydatabase; Trusted_Connection = True;"))
+            {
+                cn.Open();
+                string sql = string.Format("INSERT INTO dbo.Table_2 (Avtor, Novavtor, Namebook, Nameizdatel, Year, Tiraj, Isbn) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", avtor, novavtor, namebook, nameizdatel, year, tiraj, isbn);
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
+            }
+        }
+        private ICommand _save;
+        private ICommand Save
+        {
+            get
+            {
+                return _save ?? (_save = new CommandHandler(()=> ssave(Avtor, Novavtor, Namebook, Nameizdatel, Year, Tiraj, Isbn), _canExecute ));
+            }
+        }
+        private bool _canExecute;
+    }
+    public class CommandHandler : ICommand
+    {
+        private Action _action;
+        private bool _canExecute;
+        public CommandHandler(Action action, bool canExecute)
+        {
+            _action = action;
+            _canExecute = canExecute;
+        }
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute;
+        }
+        public event EventHandler CanExecuteChanged;
+        public void Execute(object parameter)
+        {
+            _action();
         }
     }
-
 }
