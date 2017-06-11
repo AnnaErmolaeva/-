@@ -61,7 +61,7 @@ namespace WpfApplication1
         public ICommand otmena { get; set; }
 
         private int _tiraj = 1;
-        private int _year = DateTime.Now.Year;
+        private int _year = DateTime.Now.Year ;
         private string _author;
 
 
