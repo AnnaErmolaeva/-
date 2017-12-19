@@ -29,8 +29,8 @@ namespace WpfApp1
             InitializeComponent();
         }
 
-        
 
+        //REVIEW: В команду
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             _frame.NavigationService.Navigate(new Uri("Page1.xaml", UriKind.Relative));

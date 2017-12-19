@@ -12,6 +12,7 @@ namespace WpfApp1
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            //REVIEW: И опять FormatException
             int integer = (int)value;
             if (integer == int.Parse(parameter.ToString()))
                 return true;

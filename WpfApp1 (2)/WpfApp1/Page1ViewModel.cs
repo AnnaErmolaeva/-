@@ -124,6 +124,7 @@ namespace WpfApp1
 
         public static void ssave(int ves, int rost, int vozrast, int IsSuccess, int IsSuccess1, int zhelaemi_ves)
         {
+            //REVIEW:А если что-то отвалится? Исключение там...
             using (SqlConnection cn = new SqlConnection("Server = USER-PC\\SQLEXPRESS; Database= MyDataBase; Trusted_Connection = True;"))
             {
                 cn.Open();

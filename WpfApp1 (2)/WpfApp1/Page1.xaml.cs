@@ -26,7 +26,7 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
-
+        //REVIEW: В команду!
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Window2 window = new Window2();

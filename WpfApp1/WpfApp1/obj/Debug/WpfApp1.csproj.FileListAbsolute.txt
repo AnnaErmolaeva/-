@@ -20,3 +20,24 @@ C:\Users\User\source\repos\WpfApp1\WpfApp1\obj\Debug\Page2.baml
 C:\Users\User\source\repos\WpfApp1\WpfApp1\obj\Debug\Page3.baml
 C:\Users\User\source\repos\WpfApp1\WpfApp1\obj\Debug\Window2.g.cs
 C:\Users\User\source\repos\WpfApp1\WpfApp1\obj\Debug\Window2.baml
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.config
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\bin\Debug\WpfApp1.pdb
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojResolveAssemblyReference.cache
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\Page2.g.cs
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\Page3.g.cs
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\Window2.g.cs
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\Page2.baml
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\Page3.baml
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\Window2.baml
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1.g.resources
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.Cache
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
+D:\Проекты\Универ\2017\Ермолаева (3 курс)\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
