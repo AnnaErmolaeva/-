@@ -1,0 +1,146 @@
+﻿<Page x:Class="WpfApp1.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+
+      mc:Ignorable="d" 
+      d:DesignHeight="350" d:DesignWidth="500"
+      Title="Page1">
+
+    <Page.DataContext>
+        <local:Page1ViewModel></local:Page1ViewModel>
+    </Page.DataContext>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="styles/StylesMainWindow.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <!--<Page.Resources>
+        <local:RadioBoolToIntConverter x:Key="radioBoolToIntConverter" />
+    </Page.Resources>-->
+
+    <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+        <Grid Margin="20, 10,5,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" >
+                <TextBlock VerticalAlignment="Center">Ваш вес</TextBlock>
+                <TextBox  Margin="10,2,4,2" Width="50" >
+                    <TextBox.Text>
+                        <Binding Path="ves" NotifyOnValidationError="True" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:VesVR></local:VesVR>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBlock VerticalAlignment="Center"> (кг)</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" >
+                <TextBlock VerticalAlignment="Center"> Pост</TextBlock>
+                <TextBox x:Name="TextBox_Rost" Margin="10,2,4,2" Width="50" >
+                    <TextBox.Text>
+                        <Binding Path="rost" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:RostVR></local:RostVR>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBlock VerticalAlignment="Center"> (см)</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="2" >
+                <TextBlock VerticalAlignment="Center">Возраст</TextBlock>
+                <TextBox  Margin="10,2,4,2" Width="50" >
+                    <TextBox.Text>
+                        <Binding Path="vozrast" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <local:VozrastVR></local:VozrastVR>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" >
+                <StackPanel.Resources>
+                    <local:RadioBoolToIntConverter1 x:Key="RadioBoolToIntConverter1"></local:RadioBoolToIntConverter1>
+                </StackPanel.Resources>
+                <TextBlock VerticalAlignment="Center">Пол</TextBlock>
+                <RadioButton Margin="10,0,10,0" GroupName="RadioB_pol" VerticalAlignment="Center" IsChecked="{Binding Path=IsSuccess1, Converter={StaticResource RadioBoolToIntConverter1}, ConverterParameter=4}">м</RadioButton>
+                <RadioButton Grid.Column="1" Grid.Row="1" GroupName="RadioB_pol"  Margin="10,0,10,0" VerticalAlignment="Center" IsChecked="{Binding Path=IsSuccess1, Converter={StaticResource RadioBoolToIntConverter1}, ConverterParameter=5}" >ж</RadioButton>
+                
+            </StackPanel>
+        </Grid>
+        <Grid Margin=" 0, 10,0,0">
+            <Grid.Resources>
+                <local:RadioBoolToIntConverter x:Key="radioBoolToIntConverter"></local:RadioBoolToIntConverter>
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid  Grid.Column="0" Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Column="0" Margin="40,5,10,5" VerticalAlignment="Center">Уровень активности :</TextBlock>
+                <RadioButton GroupName="knopki_aktivnost" Grid.Column="1" Grid.Row="0"  VerticalAlignment="Center" IsChecked="{Binding Path=IsSuccess, Converter={StaticResource radioBoolToIntConverter}, ConverterParameter=1}" Content="малоподвижный образ жизни" ></RadioButton>
+                <Button Grid.Column="1" Grid.Row="0" Width="20" HorizontalAlignment="Right" Margin="0,2,50,2" Content=" ? " ToolTip="Сидячий образ жизни, легкие упражнения не более 3 раз в неделю"></Button>
+                <RadioButton GroupName="knopki_aktivnost" Grid.Column="1" Grid.Row="1" Margin="0,5,0,5" VerticalAlignment="Center" IsChecked="{Binding Path=IsSuccess, Converter={StaticResource radioBoolToIntConverter}, ConverterParameter=2}" Content="обычная физическая нагрузка" ></RadioButton>
+                <Button Grid.Column="1" Grid.Row="1" Width="20" HorizontalAlignment="Right" Margin="0,2,50,2" Content=" ? " ToolTip="Активный образ жизни, упражнения примерно 3 раза в неделю"></Button>
+                <RadioButton GroupName="knopki_aktivnost" Grid.Column="1" Grid.Row="2" Margin="0,5,0,5" VerticalAlignment="Center" IsChecked="{Binding Path=IsSuccess, Converter={StaticResource radioBoolToIntConverter}, ConverterParameter=3}" Content="интенсивная физическая нагрузка" ></RadioButton>
+                <Button Grid.Column="1" Grid.Row="2" Width="20" HorizontalAlignment="Right" Margin="0,2,50,2" Content=" ? " ToolTip="Очень активный образ жизни, регулярные тренировки"></Button>
+            </Grid>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="120,5,0,5">Желаемый вес</TextBlock>
+            <TextBox Grid.Column="0" Grid.Row="1" Width="80" >
+                <TextBox.Text>
+                    <Binding Path="zhelaemi_ves" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:Zhelaemi_vesVR></local:Zhelaemi_vesVR>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="300,5,0,5"> кг</TextBlock>
+            <TextBlock Grid.Column="0" Grid.Row="2" Margin="120,5,0,5">Дата начала</TextBlock>
+            <DatePicker Grid.Column="0" Grid.Row="2" Width="110" Margin="0,5,0,5"    HorizontalAlignment="Center"  >
+                <DatePicker.DataContext>
+                    <Binding Path="data" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <local:DataVR></local:DataVR>
+                        </Binding.ValidationRules>
+                    </Binding>
+                </DatePicker.DataContext>
+                
+            </DatePicker>
+
+
+            <Button Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Width="100" Height="30" Margin="0,10,0,10"  Command="{Binding save }">Рассчитать</Button>
+        </Grid>
+
+    </StackPanel>
+    </Page>
